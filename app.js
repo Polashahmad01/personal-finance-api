@@ -34,7 +34,7 @@ app.get("/", (req, res, next) => {
   });
 });
 
-app.use("api/", userRoutes);
+app.use("/api", userRoutes);
 
 // Error handing middleware
 app.use((error, req, res, next) => {

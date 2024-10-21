@@ -1,8 +1,12 @@
 import express from "express";
+import userController from "../controllers/user.js";
+import userValidator from "../utils/userSchemaValidation.js";
 const router = express.Router();
 
-router.post("/v1/user", (req, res, next) => {
-  res.status(200).json({ success: true });
-});
+router.post(
+  "/v1/user",
+  userValidator.validateUserCreatePostRoute(),
+  userController.createNewUser
+);
 
 export default router;
