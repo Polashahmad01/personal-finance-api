@@ -9,4 +9,10 @@ router.post(
   userController.createNewUser
 );
 
+router.post(
+  "/v1/user",
+  userValidator.validateUserLoginPostRoute(),
+  userController.loginUser
+);
+
 export default router;

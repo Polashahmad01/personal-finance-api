@@ -8,4 +8,11 @@ const validateUserCreatePostRoute = () => {
   ];
 };
 
-export default { validateUserCreatePostRoute };
+const validateUserLoginPostRoute = () => {
+  return [
+    body("email", "Email is required").trim().isEmail("Invalid email address"),
+    body("password", "Password is required").trim().notEmpty(),
+  ];
+};
+
+export default { validateUserCreatePostRoute, validateUserLoginPostRoute };
