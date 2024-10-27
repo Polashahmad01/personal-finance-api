@@ -4,7 +4,7 @@ import userValidator from "../utils/userSchemaValidation.js";
 const router = express.Router();
 
 router.post(
-  "/v1/user",
+  "/v1/user/register",
   userValidator.validateUserCreatePostRoute(),
   userController.createNewUser
 );
