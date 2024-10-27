@@ -10,8 +10,13 @@ const validateUserCreatePostRoute = () => {
 
 const validateUserLoginPostRoute = () => {
   return [
-    body("email", "Email is required").trim().isEmail("Invalid email address"),
-    body("password", "Password is required").trim().notEmpty(),
+    body("email")
+      .trim()
+      .notEmpty()
+      .withMessage("Email is required")
+      .isEmail()
+      .withMessage("Invalid email address"),
+    body("password").trim().notEmpty().withMessage("Password is required"),
   ];
 };
 

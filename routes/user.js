@@ -10,7 +10,7 @@ router.post(
 );
 
 router.post(
-  "/v1/user",
+  "/v1/user/login",
   userValidator.validateUserLoginPostRoute(),
   userController.loginUser
 );
